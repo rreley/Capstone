@@ -2,8 +2,6 @@
 
 # Helen - A Call Tracking App
 
-[![CircleCI](https://circleci.com/gh/ualr-TEAM2/capstone.svg?style=svg)](https://circleci.com/gh/ualr-TEAM2/capstone)
-
 ### Quickstart
 
 ```bash

@@ -1,0 +1,127 @@
+# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
+version: 2.1
+
+orbs:
+  node: circleci/node@4.7
+  browser-tools: circleci/browser-tools@1.1.0
+
+executors:
+  docker-executor:
+    docker:
+      - image: cimg/node:16.10.0-browsers
+
+jobs:
+  checkout_api:
+    executor: docker-executor
+    working_directory: "~/project/api" 
+    steps:
+      - checkout:
+          path: ~/project
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  install_api_dependencies:
+    executor: docker-executor
+    working_directory: "~/project/api"
+    steps:
+      - attach_workspace:
+          at: .
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install dependencies
+          command: npm install
+      #- run:
+      #    name: Build the api
+      #    command: npm run build
+      - save_cache:
+          key: dependencies-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules/*
+
+  run_api_tests:
+    executor: docker-executor
+    working_directory: "~/project/api"
+    steps:
+      - attach_workspace:
+          at: .
+      - run: 
+          name: Execute tests
+          command: npm run test
+      - run: 
+          name: Capture test results
+          command: if [[ -e test-results.xml ]]; then cp test-results.xml $CIRCLE_TEST_REPORTS/test-results.xml; fi
+
+  checkout_client:
+    executor: docker-executor
+    working_directory: "~/project/client" 
+    steps:
+      - checkout:
+          path: ~/project
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  install_client_dependencies:
+    executor: docker-executor
+    working_directory: "~/project/client"
+    steps:
+      - attach_workspace:
+          at: .
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install dependencies
+          command: npm install
+      - save_cache:
+          key: dependencies-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules/*
+
+  run_client_tests:
+    executor: docker-executor
+    working_directory: "~/project/client"
+    steps:
+      - attach_workspace:
+          at: .
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
+      - run: 
+          name: Execute tests
+          command: npm run test
+      - run: 
+          name: Capture test results
+          command: if [[ -e test-results.xml ]]; then cp test-results.xml $CIRCLE_TEST_REPORTS/test-results.xml; fi
+
+workflows:
+  test-api:
+    jobs:
+      - checkout_api
+      - install_api_dependencies:
+          requires:
+            - checkout_api
+      - run_api_tests:
+          requires: 
+            - install_api_dependencies
+  test-client:
+    jobs:
+      - checkout_client
+      - install_client_dependencies:
+          requires:
+            - checkout_client
+      - run_client_tests:
+          requires:
+            - install_client_dependencies

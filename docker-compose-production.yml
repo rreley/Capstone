@@ -1,0 +1,37 @@
+# PRODUCTION DOCKER-COMPOSE
+
+version: "3"
+services:
+  client:
+    environment:
+      - NODE_ENV=production
+    image: client-production:${ENV}
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - capstone-app
+    restart: unless-stopped
+    volumes:
+      - caddy-data:/data
+      - caddy-config:/config
+  api:
+    environment:
+      - NODE_ENV=production
+    image: api-server
+    ports:
+      - "5001:5001"
+    env_file: ./api/config/${ENV}.env
+    networks:
+      - capstone-app
+    restart: unless-stopped
+networks:
+  capstone-app:
+    driver: bridge
+volumes:
+  pg-data:
+    driver: local
+  caddy-data:
+    driver: local
+  caddy-config:
+    driver: local

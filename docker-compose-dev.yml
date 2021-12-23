@@ -1,0 +1,53 @@
+# DEVELOPMENT DOCKER-COMPOSE
+
+version: "3"
+services:
+  client:
+    environment:
+      - NODE_ENV=development
+      - PORT=5000
+    image: client-dev
+    stdin_open: true
+    ports:
+      - "5000:5000"
+    networks:
+      - capstone-app
+    restart: always
+    volumes:
+      - ./client/:/home/node/client
+      - /home/node/client/node_modules
+  api:
+    environment:
+      - NODE_ENV=development
+      - PORT=5001
+    image: api-dev
+    ports:
+      - "5001:5001"
+    env_file: ./api/config/${ENV}.env
+    networks:
+      - capstone-app
+    restart: always
+    volumes:
+      - ./api/:/home/node/api
+      - /home/node/api/node_modules
+    depends_on:
+      - db
+  db:
+    image: postgres:13-alpine
+    restart: always
+    environment:
+      - POSTGRES_DB=helen
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    networks:
+      - capstone-app
+    ports:
+      - 5432:5432
+networks:
+  capstone-app:
+    driver: bridge
+volumes:
+  pg-data:
+    driver: local

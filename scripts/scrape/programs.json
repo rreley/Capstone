@@ -1,0 +1,94 @@
+[
+  { "department": "Arts", "program": "Applied Design" },
+  { "department": "Arts", "program": "Art" },
+  { "department": "Arts", "program": "Music" },
+  { "department": "Arts", "program": "Music Education" },
+  { "department": "Arts", "program": "Photography" },
+  { "department": "Arts", "program": "Theatre Arts" },
+  { "department": "Business", "program": "Accounting" },
+  { "department": "Business", "program": "Business Analytics" },
+  { "department": "Business", "program": "Business Information Systems" },
+  { "department": "Business", "program": "Economics" },
+  { "department": "Business", "program": "Finance" },
+  { "department": "Business", "program": "International Business" },
+  { "department": "Business", "program": "Management" },
+  { "department": "Business", "program": "Marketing" },
+  { "department": "Communication", "program": "Applied Communication" },
+  { "department": "Communication", "program": "Mass Communication" },
+  {
+    "department": "Communication",
+    "program": "Professional and Technical Writing"
+  },
+  { "department": "Education", "program": "Education" },
+  { "department": "Education", "program": "Elementary Education K-6" },
+  { "department": "Education", "program": "Interpretation: ASL/English" },
+  { "department": "Education", "program": "Middle Childhood Education" },
+  { "department": "Education", "program": "Special Education" },
+  {
+    "department": "Engineering",
+    "program": "Civil and Construction Engineering"
+  },
+  { "department": "Engineering", "program": "Construction" },
+  { "department": "Engineering", "program": "Construction Management" },
+  {
+    "department": "Engineering",
+    "program": "Electrical and Computer Engineering"
+  },
+  {
+    "department": "Engineering",
+    "program": "Electronics & Computer Engineering Technology"
+  },
+  { "department": "Engineering", "program": "Mechanical Engineering" },
+  {
+    "department": "Engineering",
+    "program": "Mechanical Engineering Technology"
+  },
+  { "department": "General Programs", "program": "Applied Science" },
+  { "department": "General Programs", "program": "General Studies" },
+  { "department": "General Programs", "program": "Interdisciplinary Studies" },
+  { "department": "Health", "program": "Communication Sciences and Disorders" },
+  { "department": "Health", "program": "Health Education and Promotion" },
+  { "department": "Health", "program": "K-12 Health and Physical Education" },
+  { "department": "Health", "program": "Nursing" },
+  { "department": "Health", "program": "Pre-Professional Studies" },
+  { "department": "Humanities and Culture", "program": "English" },
+  { "department": "Humanities and Culture", "program": "French" },
+  { "department": "Humanities and Culture", "program": "History" },
+  { "department": "Humanities and Culture", "program": "Philosophy" },
+  { "department": "Humanities and Culture", "program": "Spanish" },
+  {
+    "department": "Humanities and Culture",
+    "program": "Workplace Spanish Certificate of Proficiency"
+  },
+  { "department": "Information Technology", "program": "Computer Programming" },
+  { "department": "Information Technology", "program": "Computer Science" },
+  { "department": "Information Technology", "program": "Cybersecurity" },
+  {
+    "department": "Information Technology",
+    "program": "Information Assurance"
+  },
+  { "department": "Information Technology", "program": "Information Science" },
+  {
+    "department": "Information Technology",
+    "program": "Web Design & Development"
+  },
+  { "department": "Mathematics", "program": "Mathematics" },
+  { "department": "Mathematics", "program": "Mathematics Education" },
+  { "department": "Natural Sciences", "program": "Biology" },
+  { "department": "Natural Sciences", "program": "Chemistry" },
+  { "department": "Natural Sciences", "program": "Geology" },
+  { "department": "Natural Sciences", "program": "Physics" },
+  { "department": "Social Sciences", "program": "Anthropology" },
+  { "department": "Social Sciences", "program": "Criminal Justice" },
+  { "department": "Social Sciences", "program": "Law Enforcement" },
+  { "department": "Social Sciences", "program": "Legal Studies" },
+  {
+    "department": "Social Sciences",
+    "program": "Nonprofit Leadership Studies"
+  },
+  { "department": "Social Sciences", "program": "Political Science" },
+  { "department": "Social Sciences", "program": "Psychology" },
+  { "department": "Social Sciences", "program": "Public Administration" },
+  { "department": "Social Sciences", "program": "Social Work" },
+  { "department": "Social Sciences", "program": "Sociology" }
+]

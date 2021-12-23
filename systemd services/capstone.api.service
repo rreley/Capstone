@@ -1,0 +1,19 @@
+[Unit]
+Description=Helen API made for UALR Capstone Fall 2021
+After=docker.service
+Requires=docker.service
+
+[Service]
+Restart=always
+ExecStartPre=/bin/bash \
+-c '/usr/bin/docker rm -f capstone-api || /bin/true'
+ExecStartPre=/usr/bin/docker pull acash1/capstone-api
+ExecStart=/usr/bin/docker run --name capstone-api \
+-p 5001:5001 -e "NODE_ENV=development" -e "PORT=5001" \
+-e "AUTH0_AUDIENCE=https://brogrammers.us.auth0.com/api/v2/" \
+-e "AUTH0_DOMAIN=brogrammers.us.auth0.com" \
+acash1/capstone-api
+ExecStop=/usr/bin/docker rm -f capstone-api
+
+[Install]
+WantedBy=multi-user.target

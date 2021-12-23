@@ -1,0 +1,65 @@
+Index,Department,Program,Department_ID,Program_ID
+1,Arts,Applied Design,1,1
+2,Arts,Art,1,2
+3,Arts,Music,1,3
+4,Arts,Music Education,1,4
+5,Arts,Photography,1,5
+6,Arts,Theatre Arts,1,6
+7,Business,Accounting,2,1
+8,Business,Business Analytics,2,2
+9,Business,Business Information Systems,2,3
+10,Business,Economics,2,4
+11,Business,Finance,2,5
+12,Business,International Business,2,6
+13,Business,Management,2,7
+14,Business,Marketing,2,8
+15,Communication,Applied Communication,3,1
+16,Communication,Mass Communication,3,2
+17,Communication,Professional and Technical Writing,3,3
+18,Education,Education,4,1
+19,Education,Elementary Education K-6,4,2
+20,Education,Interpretation: ASL/English,4,3
+21,Education,Middle Childhood Education,4,4
+22,Education,Special Education,4,5
+23,Engineering,Civil and Construction Engineering,5,1
+24,Engineering,Construction,5,2
+25,Engineering,Construction Management,5,3
+26,Engineering,Electronics & Computer Engineering Technology,5,5
+27,Engineering,Mechanical Engineering,5,6
+28,Engineering,Mechanical Engineering Technology,5,7
+29,General Programs,Applied Science,6,1
+30,General Programs,General Studies,6,2
+31,General Programs,Interdisciplinary Studies,6,3
+32,Health,Communication Sciences and Disorders,7,1
+33,Health,Health Education and Promotion,7,2
+34,Health,K-12 Health and Physical Education,7,3
+35,Health,Nursing,7,4
+36,Health,Pre-Professional Studies,7,5
+37,Humanities and Culture,English,8,1
+38,Humanities and Culture,French,8,2
+39,Humanities and Culture,History,8,3
+40,Humanities and Culture,Philosophy,8,4
+41,Humanities and Culture,Spanish,8,5
+42,Humanities and Culture,Workplace Spanish Certificate of Proficiency,8,6
+43,Information Technology,Computer Programming,9,1
+44,Information Technology,Computer Science,9,2
+45,Information Technology,Cybersecurity,9,3
+46,Information Technology,Information Assurance,9,5
+47,Information Technology,Information Science,9,6
+48,Information Technology,Web Design & Development,9,7
+49,Mathematics,Mathematics,10,1
+50,Mathematics,Mathematics Education,10,2
+51,Natural Sciences,Biology,11,1
+52,Natural Sciences,Chemistry,11,2
+53,Natural Sciences,Geology,11,3
+54,Natural Sciences,Physics,11,4
+55,Social Sciences,Anthropology,12,1
+56,Social Sciences,Criminal Justice,12,2
+57,Social Sciences,Law Enforcement,12,3
+58,Social Sciences,Legal Studies,12,4
+59,Social Sciences,Nonprofit Leadership Studies,12,5
+60,Social Sciences,Political Science,12,6
+61,Social Sciences,Psychology,12,7
+62,Social Sciences,Public Administration,12,8
+63,Social Sciences,Social Work,12,9
+64,Social Sciences,Sociology,12,10
